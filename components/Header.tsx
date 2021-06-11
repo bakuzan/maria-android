@@ -1,14 +1,19 @@
 import * as React from 'react';
 import { Text, Image, TouchableOpacity, View, StyleSheet } from 'react-native';
 import { StackHeaderTitleProps } from '@react-navigation/stack';
+import { Audio } from 'expo-av';
 
 import randomValueOfEnum from '@/utils/randomValueOfEnum';
 import { MariaAssetFileNames } from '@/constants';
 
 import pic from '@/assets/maria_48x48.png';
 
-function getAssetUrl(value: MariaAssetFileNames) {
-  return `../assets/${value.toString()}`;
+async function getAudioFile(filename: MariaAssetFileNames) {
+  const { sound } = await Audio.Sound.createAsync(
+    require(`../assets/${filename.toString()}`)
+  );
+
+  return sound;
 }
 
 export default function Header(props: StackHeaderTitleProps) {
@@ -17,11 +22,10 @@ export default function Header(props: StackHeaderTitleProps) {
     color: props.tintColor
   };
 
-  function onLogoPress() {
+  async function onLogoPress() {
     const filename = randomValueOfEnum(MariaAssetFileNames);
-    const assetUrl = getAssetUrl(filename);
-    const voice = new Audio(assetUrl);
-    voice.play();
+    const voice = await getAudioFile(filename);
+    await voice.playAsync();
   }
 
   return (
