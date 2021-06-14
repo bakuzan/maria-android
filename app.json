@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "maria-android",
+    "name": "Maria",
     "slug": "maria-android",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -21,7 +21,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "io.expo.maria"
     },
     "web": {
       "favicon": "./assets/favicon.png"

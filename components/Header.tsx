@@ -1,20 +1,12 @@
 import * as React from 'react';
 import { Text, Image, TouchableOpacity, View, StyleSheet } from 'react-native';
 import { StackHeaderTitleProps } from '@react-navigation/stack';
-import { Audio } from 'expo-av';
 
 import randomValueOfEnum from '@/utils/randomValueOfEnum';
+import getAudioFile from '@/utils/getAudioFile';
 import { MariaAssetFileNames } from '@/constants';
 
 import pic from '@/assets/maria_48x48.png';
-
-async function getAudioFile(filename: MariaAssetFileNames) {
-  const { sound } = await Audio.Sound.createAsync(
-    require(`../assets/${filename.toString()}`)
-  );
-
-  return sound;
-}
 
 export default function Header(props: StackHeaderTitleProps) {
   const textStyle = {
