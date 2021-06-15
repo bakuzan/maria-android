@@ -2,8 +2,6 @@ export const baseColour = '#fdfff5';
 export const themeColour = '#88001b';
 export const themeContrastColour = '#fff';
 
-export const accentColour = '#dc143c';
-
 export const monthNames = [
   'Jan',
   'Feb',

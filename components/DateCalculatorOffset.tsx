@@ -13,7 +13,7 @@ export default function Offset() {
   const hasOffsetNumber = num !== null && num !== 0;
 
   return (
-    <View style={styles.page}>
+    <View style={[styles.page, { backgroundColor: colors.background }]}>
       <View
         style={[styles.inputContainer, { borderBottomColor: colors.primary }]}
       >

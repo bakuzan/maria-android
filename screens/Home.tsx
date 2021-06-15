@@ -13,7 +13,7 @@ export default function Home({ navigation }: Props) {
   const { colors } = useTheme();
 
   return (
-    <View style={styles.home}>
+    <View style={[styles.home, { backgroundColor: colors.background }]}>
       <Button
         onPress={() => navigation.navigate('Date Calculator')}
         title="Date Calculator"

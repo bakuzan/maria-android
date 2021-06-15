@@ -38,13 +38,13 @@ const styles = StyleSheet.create({
     height: 60
   },
   image: {
-    width: 48,
-    height: 48
+    width: 40,
+    height: 40
   },
   text: {
     padding: 4,
     paddingRight: 8,
-    fontSize: 24,
+    fontSize: 22,
     height: '100%'
   }
 });

@@ -18,7 +18,7 @@ export default function Duration() {
   const result = durationCalculator(fromDate, toDate);
 
   return (
-    <View style={styles.page}>
+    <View style={[styles.page, { backgroundColor: colors.background }]}>
       <View style={styles.controls}>
         <View
           style={[styles.inputContainer, { borderBottomColor: colors.primary }]}
