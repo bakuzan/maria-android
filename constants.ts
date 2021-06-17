@@ -30,5 +30,6 @@ export enum MariaAssetFileNames {
 export type RootStackList = {
   Home: undefined;
   'Date Calculator': undefined;
+  'Roman Numeral Converter': undefined;
   Settings: undefined;
 };
