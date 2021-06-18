@@ -7,7 +7,7 @@ export default function RomanToNumberConverter() {
   const { colors } = useTheme();
 
   const [numeral, setNumeral] = React.useState<string>('');
-  const hasValidNumeral = isValidRomanNumeral(numeral);
+  const hasValidNumeral = numeral !== '' && isValidRomanNumeral(numeral);
 
   return (
     <View style={[styles.page, { backgroundColor: colors.background }]}>
@@ -19,6 +19,7 @@ export default function RomanToNumberConverter() {
           keyboardType="default"
           accessibilityLabel="Enter a roman numeral to convert to number"
           placeholder="Enter a roman numeral to convert to number"
+          autoCapitalize="characters"
           value={numeral}
           onChangeText={(text) => setNumeral(text)}
           style={styles.input}
@@ -30,8 +31,12 @@ export default function RomanToNumberConverter() {
         </View>
       ) : (
         <View style={styles.results}>
-          <Text>Please enter a valid roman numeral.</Text>
-          <Text>Warning! Only numbers up to 3999 are supported.</Text>
+          <Text style={styles.message}>
+            Please enter a valid roman numeral.
+          </Text>
+          <Text style={styles.message}>
+            Warning! Only numbers up to 3999 are supported.
+          </Text>
         </View>
       )}
     </View>
@@ -57,6 +62,9 @@ const styles = StyleSheet.create({
   },
   result: {
     fontWeight: 'bold',
+    textAlign: 'center'
+  },
+  message: {
     textAlign: 'center'
   }
 });

@@ -11,6 +11,7 @@ import AppLoading from 'expo-app-loading';
 import Header from './components/Header';
 import Home from './screens/Home';
 import DateCalculator from './screens/DateCalculator';
+import RomanNumerals from './screens/RomanNumerals';
 import Settings from './screens/Settings';
 
 import getAudioFile from '@/utils/getAudioFile';
@@ -79,6 +80,17 @@ export default function App() {
         <Stack.Screen
           name="Date Calculator"
           component={DateCalculator}
+          options={{
+            cardStyleInterpolator,
+            headerTitleStyle: {
+              fontWeight: 'bold',
+              fontSize: 16
+            }
+          }}
+        />
+        <Stack.Screen
+          name="Roman Numeral Converter"
+          component={RomanNumerals}
           options={{
             cardStyleInterpolator,
             headerTitleStyle: {

@@ -30,7 +30,10 @@ export default function NumberToRomanConverter() {
         </View>
       ) : (
         <View style={styles.results}>
-          <Text>Please enter a number greater than 0, but less than 4000.</Text>
+          <Text style={styles.message}>Please enter a valid number.</Text>
+          <Text style={styles.message}>
+            This must be greater than 0, but less than 4000.
+          </Text>
         </View>
       )}
     </View>
@@ -56,6 +59,9 @@ const styles = StyleSheet.create({
   },
   result: {
     fontWeight: 'bold',
+    textAlign: 'center'
+  },
+  message: {
     textAlign: 'center'
   }
 });

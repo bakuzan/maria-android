@@ -25,6 +25,9 @@ export default function RomanNumerals() {
           fontSize: 16
         }
       }}
+      screenOptions={{
+        unmountOnBlur: true
+      }}
     >
       <Tab.Screen name="To Roman" component={NumberToRomanConverter} />
       <Tab.Screen name="To Number" component={RomanToNumberConverter} />
